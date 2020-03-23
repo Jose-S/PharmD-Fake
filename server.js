@@ -1,0 +1,23 @@
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 3000;
+
+server.use(middlewares);
+server.use(router);
+
+server.listen(port, () => {
+  console.log(`
+  
+  JSON Server is Running!  
+  
+  Resources
+  http://localhost:3000/students
+  http://localhost:3000/courses
+
+  Home
+  http://localhost:3000
+  
+  `);
+});
