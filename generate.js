@@ -1,3 +1,5 @@
+// var usersRoute = require("./users.json");
+
 module.exports = function() {
   var faker = require("faker");
   faker.seed(123);
@@ -34,7 +36,17 @@ module.exports = function() {
           };
         })
       };
-    })
+    }),
+    users: [
+      {
+        email: "jose@mail.com",
+        password: "password",
+        firstname: "Jose",
+        lastname: "Saravia",
+        canWrite: true,
+        id: 1
+      }
+    ]
   };
 };
 
