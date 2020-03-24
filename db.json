@@ -1,4 +1,14 @@
 {
+  "users": [
+    {
+      "email": "joses@mail.com",
+      "password": "$2a$10$HYsQa3LZ3vEWL6Gv5UubuuGGSNKuuoPMi9sXXeQFnznI7HQT1tTEy",
+      "firstname": "Jose",
+      "lastname": "Saravia",
+      "canWrite": true,
+      "id": 1
+    }
+  ],
   "students": [
     {
       "id": 1,
