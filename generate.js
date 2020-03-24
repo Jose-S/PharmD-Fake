@@ -40,7 +40,8 @@ module.exports = function() {
     users: [
       {
         email: "jose@mail.com",
-        password: "password",
+        password:
+          "$2a$10$am3RZwU.seNqP1LqBn7nyuuI9acvYsJUwkwCOgPBR4RRNNzi34JnG",
         firstname: "Jose",
         lastname: "Saravia",
         canWrite: true,
