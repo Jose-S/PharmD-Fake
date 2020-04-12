@@ -1,13 +1,13 @@
 // var usersRoute = require("./users.json");
 
-module.exports = function() {
+module.exports = function () {
   var faker = require("faker");
   faker.seed(123);
   var _ = require("lodash");
-  var statuses = ["enrolled", "leave", "dropout", "coop", "graduated"];
+  var statuses = ["enrolled", "leave", "dropback", "coop", "graduated"];
 
   return {
-    students: _.times(100, function(n) {
+    students: _.times(100, function (n) {
       var currentCourse = generateCourses(4);
       return {
         id: n + 1,
@@ -20,21 +20,21 @@ module.exports = function() {
         cohort: generateCohort(),
         international: weighted(1, 25),
         active_courses: currentCourse,
-        courses: _.unionBy(currentCourse, generateCourses(10), "course_id")
+        courses: _.unionBy(currentCourse, generateCourses(10), "course_id"),
       };
     }),
-    courses: _.times(25, function(n) {
+    courses: _.times(25, function (n) {
       return {
         id: n + 1,
         name: faker.random.words(2),
         active: weighted(2, 1),
         credits: numWeighted([2, 4], [1, 4]),
-        sections: _.times(numWeighted([1, 2, 3], [4, 2, 1]), function(n) {
+        sections: _.times(numWeighted([1, 2, 3], [4, 2, 1]), function (n) {
           return {
             id: (n + 1) * 1000,
-            semester: "spring19"
+            semester: "spring19",
           };
-        })
+        }),
       };
     }),
     users: [
@@ -45,20 +45,20 @@ module.exports = function() {
         firstname: "Jose",
         lastname: "Saravia",
         canWrite: true,
-        id: 1
-      }
-    ]
+        id: 1,
+      },
+    ],
   };
 };
 
 function generateCourses(max) {
   var _ = require("lodash");
-  var classIDs = _.shuffle([...Array(25).keys()].map(x => x + 1));
-  return _.times(numWeighted([3, max], [1, 20]), function(n) {
+  var classIDs = _.shuffle([...Array(25).keys()].map((x) => x + 1));
+  return _.times(numWeighted([3, max], [1, 20]), function (n) {
     return {
       course_id: classIDs.pop(),
       grade: _.random(50, 100),
-      section_id: 1000
+      section_id: 1000,
     };
   });
 }
@@ -71,7 +71,7 @@ function generateCohort() {
       ? `${startYear + 1}/${startYear + 6}`
       : `${startYear}/${startYear + 5}`,
     original: `${startYear}/${startYear + 5}`,
-    moved: hasChanged
+    moved: hasChanged,
   };
 }
 
