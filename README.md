@@ -1,4 +1,4 @@
-How to Runt his fake server
+How to run this fake server:
 
 1. Clone the Project
 2. Run `npm install -g json-server`
