@@ -1,6 +1,5 @@
-// var usersRoute = require("./users.json");
-
 module.exports = function () {
+  var coursesDB = require("./Generators/CourseGenerator")();
   var faker = require("faker");
   faker.seed(123);
   var _ = require("lodash");
@@ -23,20 +22,7 @@ module.exports = function () {
         courses: _.unionBy(currentCourse, generateCourses(10), "course_id"),
       };
     }),
-    courses: _.times(25, function (n) {
-      return {
-        id: n + 1,
-        name: faker.random.words(2),
-        active: weighted(2, 1),
-        credits: numWeighted([2, 4], [1, 4]),
-        sections: _.times(numWeighted([1, 2, 3], [4, 2, 1]), function (n) {
-          return {
-            id: (n + 1) * 1000,
-            semester: "spring19",
-          };
-        }),
-      };
-    }),
+    courses: coursesDB,
     users: [
       {
         email: "jose@mail.com",
