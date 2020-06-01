@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "johndoe@mail.com",
+      "password": "bestPassword",
+      "firstname": "John",
+      "lastname": "Doe",
+      "canWrite": false
+    },
+    {
+      "id": 2,
+      "email": "sammyapple@mail.com",
+      "password": "bestPassw0rd",
+      "firstname": "Sammy",
+      "lastname": "Apple",
+      "canWrite": true
+    }
+  ]
+}
