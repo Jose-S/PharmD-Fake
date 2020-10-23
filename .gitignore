@@ -3,3 +3,6 @@ node_modules/
 # dependencies
 faker/
 lodash/
+
+# notes
+notes.txt
