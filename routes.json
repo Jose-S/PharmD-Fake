@@ -1,0 +1,4 @@
+{
+    "/students/cohort/:cohort": "/students?cohort?current=:cohort",
+    "/students/f1": "/students?international=true"
+}
