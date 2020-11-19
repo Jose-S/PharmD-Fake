@@ -1,5 +1,6 @@
 module.exports = function () {
   var coursesDB = require("./Generators/CourseGenerator")();
+  var notesDB = require("./Generators/NoteGenerator")();
   var faker = require("faker");
   faker.seed(123);
   var _ = require("lodash");
@@ -23,6 +24,7 @@ module.exports = function () {
       };
     }),
     courses: coursesDB,
+    notes: notesDB,
     users: [
       {
         email: "jose@mail.com",
